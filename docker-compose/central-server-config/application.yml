@@ -1,0 +1,25 @@
+#common configuration shared between all applications
+configserver:
+  name: Docker JHipster Registry
+  status: Connected to the JHipster Registry running in Docker
+
+jhipster:
+  security:
+    authentication:
+      jwt:
+        base64-secret: NWUwMDhmOWJmODVmNGY3MjczYWZkY2QzOGNjMjY4NmNiYmNlYWNhNTAxMTY3YmEyMzkzNDdmYmQzNmZmYmVlMTBjYzE4MzczMWIwMDA0ZGViZjM3MjhmZjM4MjY1ODkyM2I1Yw==
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:${jhipster.registry.password}@jhipster-registry:8761/eureka/
+spring:
+	security: 
+		oauth2:
+			client:
+				provider:
+					oidc: 
+						issuer-uri: https://dev-6637566.okta.com/oauth2/default
+				registration: 
+					oidc:
+						client-id: 0oarpi28YyOdrhXEc5d5
+						client-secret: _t4d5mka9MdJLAiGqpATjiDbWpifoCj_s_yhxiY7
